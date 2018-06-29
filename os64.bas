@@ -1,4 +1,4 @@
-0 poke 19,1
+0 poke 19, 1
 1 hw$ = "Commodore 64"
 2 sw$ = "os64 a0.0.0 os64/os64"
 3 swvs$ = "a0.0.0"
@@ -12,18 +12,16 @@
 9 if c$ = "hardware" then goto 191
 10 if c$ = "version" then goto 255
 11 if c$ = "family" then goto 319
-12 if c$ = "poke" then goto 383
-13 if c$ = "peek" then goto 447
-14 if c$ = "about" then goto 511
-15 if c$ = "get_ascii" then goto 575
+14 if c$ = "about" then goto 383
+15 if c$ = "getasc" then goto 447
 
 63 print
 64 print sw$
 65 goto 2047
 
-127 i% = 0
-128 i% = i% + 1
-129 poke i, 255
+127 i = 0
+128 i = i + 1
+129 poke i, 0
 130 goto 128
 
 191 print
@@ -39,26 +37,14 @@
 321 goto 2047
 
 383 print
-384 input "address: "; address%
-385 print
-386 input "byte: "; towrite%
-387 poke address%, towrite%
+384 print "os64, by iH8Ra1n. "
+385 print "os64 is COMPLETELY free software,  "
+386 print "if you paid for this, DEMAND A REFUND. "
+387 print "os64 has an official website: os64-project.github.io"
 
-447 print
-448 input "address: "; address%
-449 print
-450 read% = peek(address%)
-451 print read%
-
-511 print
-512 print "os64, by iH8Ra1n. "
-513 print "os64 is COMPLETELY free software,  "
-514 print "if you paid for this, DEMAND A REFUND. "
-515 print "os64 has an official website: os64-project.github.io"
-
-575 input "$ "; s$
-576 print asc(s$)
-577 goto 2047
+447 input "$ "; s$
+448 print asc(s$)
+449 goto 2047
 
 2047 print
 2048 goto 2
